@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+	<head>
+		<title>物流</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="static/css/main.css" />
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();//防止链接打开url(.scroll)
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);//js被chrome和Firefox都支持
+				});
+			});
+		</script>
+	</head>
+
+	<body> 
+    		<nav id="navbar-example2" class="navbar navbar-default navbar-static">
+				<div class="container">
+					<div class="navbar-header">
+						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
+				            <span class="sr-only">Toggle navigation</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				        </button>
+						<a class="navbar-brand" href="#"><font size="6" >卓越快递</font></a>
+					</div>
+					<div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+          				<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="index.html">网站首页</a>
+							</li>
+							<li class="">
+								<a href="net.html">网点查询</a>
+							</li>
+							<li class="">
+								<a href="search.html">查询快递</a>
+							</li>
+							<li class="">
+								<a href="evaluate.html">评价快递</a>
+							</li>
+					
+							<li class="">
+								<a href="contact.html">联系我们</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			
+				<div class="space" id="mbanner"></div>
+				<div class="banner">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<img src="static/images/banner/banner1.jpg" width="100%">
+							</div>
+							<div class="item">
+								<img src="static/images/banner/banner2.jpg" width="100%">
+							</div>
+							<div class="item">
+								<img src="static/images/banner/banner3.jpg" width="100%">
+							</div>
+						</div>
+
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				<!--about-->
+				<div class="about padT80 padB80" id="mabout">
+					<div class="container">
+						<section class="title-sty2">
+							<h2>关于我们</h2>
+							<p><span>————&ensp;</span>About<span>&ensp;————</span></p>
+						</section>
+						<div class="row abList padT80">
+							<ul class="col-sm-6 col-xs-12">
+								<li>
+									<img src="static/images/about/ab1.png" />
+									<h3>开通网上服务</h3>
+									<p>
+										客户可以在本官网进行快递的跟踪查询和后续评价。
+									</p>
+								</li>
+								<li>
+									<img src="static/images/about/ab2.png" />
+									<h3>关注客户体验</h3>
+									<p>
+										客户可以随时在“联系我们”中，向我们提出宝贵的意见，督促我们进一步完善服务。
+									</p>
+								</li>
+								<li>
+									<img src="static/images/about/ab3.png" />
+									<h3>快速全面运输</h3>
+									<p>
+										我们为尽力为客户提供全面而快速的快件运送服务，赢得客户的信赖。
+									</p>
+								</li>
+							</ul>
+							<div class="abimg col-sm-6 col-xs-12">
+								<img src="static/images/about/about.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<!--news-->
+				<div class="news padB80 padT80 bgGrey" id="mnews">
+					<div class="container">
+						<section class="title-sty2">
+							<h2>最新资讯</h2>
+							<p><span>————&ensp;</span>News<span>&ensp;————</span></p>
+						</section>
+						<div class="row padT80">
+							<div class="col-sm-6 col-xs-12">
+								<ul class="newsImg">
+									<li class="active"><img src="static/images/news/news1.jpg"></li>
+									<li><img src="static/images/news/news2.jpg"></li>
+									<li><img src="static/images/news/news3.jpg"></li>
+								</ul>
+							</div>
+							<ul class="col-sm-6 col-xs-12 newsArt">
+								<li class="active">
+									<div class="newsTime">
+										<p>2018-4-10</p>
+									</div>
+									<div class="newsCon">
+										<div class="circle"><span></span></div>
+										<a href="newsdetail.html">
+											<h3>卓越快递正式成立</h3></a>
+										<p>
+											卓越快递于2018年4月10日成立。
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="newsTime">
+										<p>2018-4-15</p>
+									</div>
+									<div class="newsCon">
+										<div class="circle"><span></span></div>
+										<a href="newsdetail.html">
+											<h3>卓越快递将开通网上快件查询和评价服务</h3></a>
+										<p>
+											为进一步增加客户体验，我们即将上线快件查询、位置跟踪和评价快递服务的功能。
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="newsTime">
+										<p>2018-4-16</p>
+									</div>
+									<div class="newsCon">
+										<div class="circle"><span></span></div>
+										<a href="newsdetail.html"><h3>小包裹利润低，快递抢滩大包裹业务</h3></a>
+										<p>
+											近年随着家电、农产品、建材等大件商品销售的电商化，以及小包裹业务利润的不断下滑，不少快递公司纷纷将业务范围由原来的数公斤内的 小包裹，扩充至几十乃至上百公斤的大包裹
+										</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<!--contact-->
+				<div class="contact padB80 padT80" id="mcontact">
+					<div class="container">
+						<section class="title-sty2">
+							<h2>联系我们</h2>
+							<p><span>————&ensp;</span>Contact<span>&ensp;————</span></p>
+						</section>
+						<div class="contact-bot-sty1 padT80">
+							<div class="row map padB80">
+								<div class="col-sm-8 col-xs-12">
+									<iframe src="static/map/map.html" width="100%" height="300px"></iframe>
+									<div class="loader">
+										<img src="static/images/loader.gif"/>
+									</div>
+								</div>
+								<ul class="address col-sm-4 col-xs-12">
+									<li>
+										<span class="glyphicon glyphicon-map-marker"></span>
+										公司地址：河南省郑州市科学大道100号
+									</li>
+									<li>
+										<span class="glyphicon glyphicon-phone-alt"></span>
+										联系电话：000-12345678
+									</li>
+									<li>
+										<span class="glyphicon glyphicon-envelope"></span>
+										联系邮箱：123456@123.com
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!--footer-->
+			<footer class="padT80">
+				<div class="container">
+					<nav class=" row">
+						<ul>
+							<li class="col-sm-3 col-xs-6"><p><a href="index.html">关于我们</a></p></li>
+							<li class="col-sm-3 col-xs-6"><p><a href="contact.html">联系我们</a></p></li>
+						</ul>
+					</nav>
+					<p>©版权所有</p>
+				</div>
+			</footer>
+		
+		
+		<script src="static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/js/main.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!-- smooth scrolling -->
+	<script type="text/javascript">
+		$(document).ready(function() {							
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+	</body>
+
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+	    <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	    <title>卓越快递 - 后台管理</title>		
+        <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' />
+		<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />    
+	    <!-- Css files -->
+	    <link href="assets/css/bootstrap.min.css" rel="stylesheet">		
+		<link href="assets/css/jquery.mmenu.css" rel="stylesheet">		
+		<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+		<link href="assets/css/climacons-font.css" rel="stylesheet">
+		<link href="assets/plugins/xcharts/css/xcharts.min.css" rel=" stylesheet">		
+		<link href="assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet">
+		<link href="assets/plugins/morris/css/morris.css" rel="stylesheet">
+		<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+		<link href="assets/plugins/jvectormap/css/jquery-jvectormap-1.2.2.css" rel="stylesheet">	    
+	    <link href="assets/css/style.min.css" rel="stylesheet">
+		<link href="assets/css/add-ons.min.css" rel="stylesheet">		
+
+        <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+      
+
+	</head>
+</head>
+
+<body>
+ 
+          <table class="layui-hide" id="test"></table>        
+          <script src="layui/layui.js" charset="utf-8"></script>
+	<!-- 公共部分开始----------------------------------------------------- -->
+ 
+<div class="navbar" role="navigation">
+<div class="container-fluid">		
+			
+			<ul class="nav navbar-nav navbar-actions navbar-left">
+				<li class="visible-md visible-lg"><a href="express_search.html#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
+			</ul>
+			
+			<form class="navbar-form navbar-left">
+				<button type="submit" class="fa fa-search"></button>
+				<input type="text" class="form-control" placeholder="Search...">
+			</form>
+			
+	           <ul class="nav navbar-nav navbar-right">
+				
+				
+				<li class="dropdown visible-md visible-lg">
+	        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="userInfo1"><img class="user-avatar" src="assets/img/avatar.jpg" alt="user-mail"><span>null</span></a>
+	        		<ul class="dropdown-menu">
+						<li class="dropdown-menu-header">
+						
+						</li>						
+						<li><a href="userInfo.html" id="userInfo2"><i class="fa fa-user"></i> 用户详情</a></li>
+						
+						<li class="divider"></li>						
+						<li><a  onclick="logout();"><i class="fa fa-sign-out"></i> 退出</a></li>	
+	        		</ul>
+	      		</li>
+				<li><a onclick="logout();"><i class="fa fa-power-off"></i></a></li>
+			</ul>
+			
+		</div>
+		</div>
+		
+	
+		<div class="row">
+				
+			<!-- start: Main Menu -->
+			<div class="sidebar ">
+								
+				<div class="sidebar-collapse">
+					<div class="sidebar-header t-center">
+                        <span><i class="fa fa-space-shuttle fa-3x blue"></i></span>
+                    </div>										
+					<div class="sidebar-menu">						
+						<ul class="nav nav-sidebar">
+							<li><a href="welcome.html" id="welcome"><i class="fa fa-laptop"></i><span class="text"> 卓越快递</span></a></li>
+							<li>
+								<a href="#"><i class="fa fa-file-text"></i><span class="text"> 用户管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									<li><a href="user_manage.html" id="user_manage"><i class="fa fa-car"></i><span class="text"> 用户管理</span></a></li>
+									<li><a href="user_add.html" id="user_add"><i class="fa fa-pencil"></i><span class="text"> 添加用户</span></a></li>
+								
+								</ul>	
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-list-alt"></i><span class="text"> 快递揽收</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									<li><a href="new_ExpressSheet.html"><i class="fa fa-indent"></i><span class="text"> 新建快递单</span></a></li>
+									<li><a href="new_ExpressSheetwanshan.html"><i class="fa fa-tags"></i><span class="text"> 完善快递单</span></a></li>
+									<li><a href="new_ExpressSheetreceive.html"><i class="fa fa-plus-square-o"></i><span class="text"> 完成揽收</span></a></li>
+						
+								</ul>
+							</li>
+								<li>
+								<a href="#"><i class="fa fa-signal"></i><span class="text"> 包裹处理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+								<li><a href="package_search.html"><i class="fa fa-font"></i><span class="text"> 包裹查询</span></a></li>
+								<li><a href="package_build.html"><i class="fa fa-retweet"></i><span class="text"> 新建包裹单</span></a></li>
+								<li><a href="package_tongji.html"><i class="fa fa-tags"></i><span class="text"> 包裹统计</span></a></li>
+									
+								  
+								</ul>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-briefcase"></i><span class="text"> 快递派送</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+								<li><a href="package_deliver.html"><i class="fa fa-retweet"></i><span class="text"> 派送快递</span></a></li>
+								</ul>	
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-life-bouy"></i><span class="text"> 快递查询</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									
+									<li><a href="express_search.html"><i class="fa fa-retweet"></i><span class="text"> 运单详情查询</span></a></li>
+									
+								</ul>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-bolt"></i><span class="text"> 客户管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">									
+									<li><a href="customer_manage.html" id="customer_manage"><i class="fa fa-meh-o"></i><span class="text"> 客户管理</span></a></li>
+									<li><a href="customer_add.html" id="customer_add"><i class="fa fa-plus-square-o"></i><span class="text"> 客户添加</span></a></li>
+									
+									<li><a href="customer_search.html" id="customer_search"><i class="fa fa-tags"></i><span class="text"> 客户搜索</span></a></li>
+									
+								</ul>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-list-alt"></i><span class="text"> 运单打印</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									<li><a href="new_ExpressSheetprint.html"><i class="fa fa-indent"></i><span class="text"> 打印快递单</span></a></li>
+									<li><a href="new_package.html"><i class="fa fa-tags"></i><span class="text"> 打印包裹单</span></a></li>									
+								</ul>
+							</li>
+							</ul>
+					</div>					
+				</div>
+				<div class="sidebar-footer">					
+										
+				</div>	
+				
+			</div>
+			</div>
+	
+	<!-- 公共部分结束----------------------------------------------------- -->
+	
+	
+		<!-- start: Content -->
+		<div class="main">		
+			<div class="row">
+				<div class="col-lg-12">
+					<h3 class="page-header"><i class="fa fa-laptop"></i> 搜索运单信息</h3>
+					<ol class="breadcrumb">
+						<li><i class="fa fa-home"></i><a href="welcome.html">首页</a></li>											  	
+					</ol>
+				</div>
+			</div>
+			<form  class="user_search" style="margin-bottom: 10px;">
+			请输入快递单号：
+            <div class="layui-inline">
+              <input class="layui-input"  id="Express_id" >
+            </div>                                 
+            </form>      
+             <button class="layui-btn" onclick="fnSearch();" id="btn" >查询</button>
+                             
+            <table class="table" >
+                <tr>
+                    <th>快递单号</th>
+                    <th>寄件人</th>
+                    <th>收件人</th>
+                    <th>揽收员</th>
+                    <th>揽收时间</th>
+                    <th>派送员</th>
+                    <th>派送时间</th>
+                    
+                </tr>
+                <tbody id="table1">
+                </tbody>
+                   
+            </table>
+            
+            
+            
+              <div class="contact-bot-sty1 padT80">
+					<div class="row map padB80">
+						<div class="col-sm-8 col-xs-12">
+							<iframe src="map.html" width="100%" height="300px" id="iframe"></iframe>
+							
+						</div>
+						
+					</div>
+                   </div>
+             
+             
+             
+            	<table class="table">
+                <tr>
+                    <th>时间</th>
+                    <th>网点信息</th>
+                    <th>操作员</th>
+                </tr>
+                <tbody id="table2">
+                <tr>
+
+                </tr>
+                </tbody>
+            </table>
+					
+        </div>			  
+             	
+       <!-- 修改模态框 --> 
+           <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					快递员详情：
+				</h4>
+			</div>
+		
+			<div class="modal-content">
+			 <form action="#">
+			 <div>
+                        <label style="align:left">ID:</label>
+                        <span  id="uid" ></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>姓名:</label>
+                        <span  id="uname" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>手机号码：</label>
+                        <span  id="utel" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>员工身份:</label>
+                        <span  id="urull" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>员工状态:</label>
+                        <span  id="usta" ></span>
+                    </div>
+                     <div class="form-group">
+                        <label >密码：</label>
+                        <span  id="upwd" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>部门编号：</label>
+                        <span  id="udpt" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>揽收包裹号：</label>
+                        <span  id="urec" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>派送包裹号：</label>
+                         <span  id="utrans" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>派送包裹号：</label>
+                         <span  id="udel" ></span>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="customer_add.html">
+                      <button type="button" class="layui-btn" data-dismiss="modal">关闭</button>
+                      </a>
+                 
+                      
+                  </div>
+                </form>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+
+			  <!-- 修改模态框 --> 
+           <div class="modal fade" id="expModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					运单详情：
+				</h4>
+			</div>
+		
+			<div class="modal-content">
+			 <form action="#">
+			 <div>
+                        <label style="align:left">运单ID:</label>
+                        <span  id="eid" ></span>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>寄件人详细信息:</label><br>
+                        
+                         <label>ID：</label><span  id="esid" ></span><br>
+                         <label>姓名：</label><span  id="esname" ></span><br>
+                          <label>电话号码：</label><span  id="estel" ></span><br>
+                         <label>邮政编码：</label><span  id="espos" ></span><br>
+                          <label>地区编码：</label><span  id="esreg" ></span><br>
+                         <label>地区：</label><span  id="esregS" ></span><br>
+                          <label>详细地址：</label><span  id="esadd" ></span><br>
+                         <label>部门：</label><span  id="esdpt" ></span><br>
+                        
+                        
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>收件人详细信息：</label><br>
+                        <label>ID：</label><span  id="erid" ></span><br>
+                         <label>姓名：</label><span  id="ername" ></span><br>
+                          <label>电话号码：</label><span  id="ertel" ></span><br>
+                         <label>邮政编码：</label><span  id="erpos" ></span><br>
+                          <label>地区编码：</label><span  id="erreg" ></span><br>
+                         <label>地区：</label><span  id="erregS" ></span><br>
+                          <label>详细地址：</label><span  id="eradd" ></span><br>
+                         <label>部门：</label><span  id="erdpt" ></span><br>
+                    </div>
+                    <hr>
+                     <div class="form-group">
+                        <label >重量：</label>
+                        <span  id="ewei" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>运输费用：</label>
+                        <span  id="etrf" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>包裹费用：</label>
+                        <span  id="epaf" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>保险费用：</label>
+                         <span  id="einf" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>揽收员：</label>
+                         <span  id="eacc" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>揽收时间：</label>
+                         <span  id="eact" ></span>
+                    </div>
+                     <div class="form-group">
+                        <label>派送员：</label>
+                         <span  id="edel" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>派送时间：</label>
+                         <span  id="edet" ></span>
+                    </div>
+                     <div class="form-group">
+                        <label>类型：</label>
+                         <span  id="etyp" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>状态：</label>
+                         <span  id="esta" ></span>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="customer_add.html">
+                      <button type="button" class="layui-btn" data-dismiss="modal">关闭</button>
+                      </a>
+                 
+                      
+                  </div>
+                </form>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+			
+			
+			  <!-- 修改模态框 --> 
+           <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					顾客详情：
+				</h4>
+			</div>
+		
+			<div class="modal-content">
+			 <form action="#">
+			 <div>
+                        <label style="align:left">ID:</label>
+                        <span  id="cid" ></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>姓名:</label>
+                        <span  id="cname" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>手机号码：</label>
+                        <span  id="ctel" ></span>
+                    </div>
+                    
+                     <div class="form-group">
+                        <label >邮政编号：</label>
+                        <span  id="cpos" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>地区编号：</label>
+                        <span  id="creg" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>地区详情：</label>
+                        <span  id="cregS" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>地址：</label>
+                         <span  id="cadd" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>部门：</label>
+                         <span  id="cdep" ></span>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="customer_add.html">
+                      <button type="button" class="layui-btn" data-dismiss="modal">关闭</button>
+                      </a>
+                 
+                      
+                  </div>
+                </form>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+     
+		
+	<!--end: Content -->	
+	<!-- start: JavaScript-->
+	<!-- 引入功能js---------------------------- -->
+			<script src="assets/js/jquery-1.11.1.min.js"></script>
+		<script src="assets/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/controlLogin.js"></script>
+        <script type="text/javascript" src="js/logout.js"></script>
+		<script type="text/javascript" src="js/getUID.js"></script>
+		<script type="text/javascript" src="js/showUserId.js"></script>
+		<script src="js/expresssearch.js"></script>
+		
+	<!-- 引入功能js---------------------------- -->
+	
+	
+ 
+	<!--[if !IE]>-->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery-2.1.1.min.js'>"+"<"+"/script>");
+		</script>
+
+	<!--<![endif]-->
+
+	<!--[if IE]>
+	
+		<script type="text/javascript">
+	 	window.jQuery || document.write("<script src='assets/js/jquery-1.11.1.min.js'>"+"<"+"/script>");
+		</script>
+		
+	<![endif]-->
+	<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>	
+	
+	
+	<!-- page scripts -->
+	<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+	<script src="assets/plugins/touchpunch/jquery.ui.touch-punch.min.js"></script>
+	<script src="assets/plugins/moment/moment.min.js"></script>
+	<script src="assets/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+	<!--[if lte IE 8]>
+		<script language="javascript" type="text/javascript" src="assets/plugins/excanvas/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="assets/plugins/flot/jquery.flot.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.pie.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.stack.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.resize.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.time.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.spline.min.js"></script>
+	<script src="assets/plugins/xcharts/js/xcharts.min.js"></script>
+	<script src="assets/plugins/autosize/jquery.autosize.min.js"></script>
+	<script src="assets/plugins/placeholder/jquery.placeholder.min.js"></script>
+	<script src="assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatables/js/dataTables.bootstrap.min.js"></script>
+	<script src="assets/plugins/raphael/raphael.min.js"></script>
+	<script src="assets/plugins/morris/js/morris.min.js"></script>
+	<script src="assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="assets/plugins/jvectormap/js/gdp-data.js"></script>	
+	<script src="assets/plugins/gauge/gauge.min.js"></script>
+	
+	
+	<!-- theme scripts -->
+	<script src="assets/js/SmoothScroll.js"></script>
+	<script src="assets/js/jquery.mmenu.min.js"></script>
+	<script src="assets/js/core.min.js"></script>
+	<script src="assets/plugins/d3/d3.min.js"></script>	
+	
+	<!-- inline scripts related to this page -->
+	<script src="assets/js/pages/index.js"></script>	
+	
+	<!-- end: JavaScript-->
+	
+</body>
+</html>
+

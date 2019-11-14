@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>卓越快递-后台登录</title>
+        <!-- layui -->
+		<link rel="stylesheet" href="layui/css/layui.css"  media="all">
+<!-- Custom Theme files -->
+<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<style>
+        .a_style:hover{
+            cursor: default;
+        }
+        #TEL_login,#ID_login{
+            color:#333333;
+        }
+        #TEL_login:hover{
+            color:#000000;
+            cursor:default;
+        }
+        #ID_login:hover{
+            color:#000000;
+            cursor:default;
+        }
+    </style>
+</head>
+<body>
+<div class="login">
+	
+	<div class="login-top">
+		<h1>卓越快递后台登录</h1>
+	
+			<input type="text"  id="userId"  placeholder="用户账号" />
+			<input type="password"  id="password" placeholder="密码"/>
+	 
+	    <div class="forgot">
+	    	<button data-type="reload" id="login"  onclick="check();" class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius">登录</button>
+	    </div>
+	</div>
+	<div class="login-bottom">
+		<h3>000-000-000</h3>
+	</div>
+</div>	
+<div class="copyright">
+	
+</div>
+<script src="assets/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script>
+
+	function check(){
+		   var $uid=$("#userId");
+		   var $pwd=$("#password");
+		 
+		   $.ajax({
+	            type:"GET",
+	            url:"http://localhost:8080/TestCxfHibernate/REST/Misc/doLogin/"+$uid.val()+"/"+$pwd.val()+"?_type=json",
+	            dataType:"json",	    
+	            success:function(data){
+	            	if(data.msgCode==100){
+	            		alert("登录失败！请重新输入！");
+	            		 window.location.href="index.html";
+	            	}
+	            	else{
+
+	                	alert("登陆成功！");
+	                
+	                	$.cookie('userToken',data.userToken,{path:'/',expires:1});
+	                	
+	                	var canshu=data.UID;
+	                	
+	                	//保存用户信息
+	            		var uid=$.cookie('UID');
+	          
+	            		if(uid==null||uid==undefined||uid=='null'||uid=='undefined'){
+	            		   
+	            		   $.cookie('UID',canshu,{path:'/',expires:1});
+	            		}
+	            		else{
+	            			$.cookie('UID',uid,{path:'/'});
+	            		}
+	            		var backToPreUrl=$.cookie('preUrl');
+	            		
+	            	
+	            		if(backToPreUrl==''||backToPreUrl==null||backToPreUrl==undefined||backToPreUrl=='undefined'||backToPreUrl=='null'){
+	            		window.location.href="welcome.html";
+	            		}
+	            		else{
+	            			$.cookie('preUrl',null,{path:'/'});
+	            			 window.location.href=backToPreUrl;
+	            		}
+	            	}
+	            	
+	            },
+	            error:function(){
+	            	
+	                alert("登录失败！请重新输入");
+	                
+	                window.location.href="index.html";
+	            }
+	        });
+		 
+
+	   }
+		  
+	</script>
+</body>
+</html>

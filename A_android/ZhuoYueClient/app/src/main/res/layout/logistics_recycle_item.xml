@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <!--左边 时间-->
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="85dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="14dp"
+        android:gravity="center"
+        android:lines="2"
+        android:text="2016-10-12 08:02:18"
+        android:textColor="@color/gray"
+        android:textSize="16sp" />
+    <!--中间 时间轴-->
+    <RelativeLayout
+        android:id="@+id/rl_left"
+        android:layout_width="35dp"
+        android:layout_height="86dp">
+
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:alpha="1"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/iv_line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/iv_status"
+            android:layout_centerInParent="true"
+            android:src="#dddddd" />
+    </RelativeLayout>
+
+    <!--右边 信息-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/rl_left"
+        android:autoLink="email|phone|web">
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="正在派送途中"
+            android:textColor="@color/gray" />
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_location"
+            android:text="正在派送途中"
+            android:autoLink="email|phone|web"
+            android:linksClickable="true"
+            android:textColorLink="@color/colorMyBackground"
+            android:textColor="@color/gray" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/tv_time"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/rl_left"
+        android:background="#9b9b9b"
+        android:visibility="gone" />
+
+</LinearLayout>

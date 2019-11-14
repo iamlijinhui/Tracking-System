@@ -1,0 +1,21 @@
+<resources>
+<!--该文件夹下配置信息只在api21及以上使用-->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimaryDark">@color/top</item>
+        <item name="android:statusBarColor">@color/top</item>
+        <!--告诉系统只在Android5.0以后的设备使用避免报红-->
+
+    </style>
+
+    <style name="Color1SwitchStyle">
+        <item name="colorControlActivated">@color/colorMyBackground</item>
+        <!-- 关闭时的拇指按钮的颜色 -->
+        <item name="colorSwitchThumbNormal">@color/gray</item>
+        <!-- witch关闭时的轨迹的颜色  30%这个颜色 -->
+        <item name="android:colorForeground">@color/gray</item>
+    </style>
+
+</resources>

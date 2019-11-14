@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context="extrace.ui.main.PackageEditActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/bg"
+        android:orientation="horizontal"
+       >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            style="@style/click"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:id="@+id/package_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorBackground"
+            android:text="包裹详情"
+            android:textSize="18sp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/package_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/package_edit_text"
+            android:textColor="@color/colorBackground"
+            android:text="12324325435"
+            android:visibility="gone"
+            android:textSize="15sp"/>
+
+
+        <TextView
+            android:id="@+id/package_tv_pack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/package_edit_scan"
+            android:textColor="@color/colorBackground"
+            android:visibility="gone"
+            android:text="扫码打包"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/package_tv_unpack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/package_edit_scan"
+            android:textColor="@color/colorBackground"
+            android:visibility="gone"
+            android:text="扫码拆件"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:id="@+id/package_edit_scan"
+            android:layout_marginRight="10dp"
+            style="@style/Icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/scan"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorLine" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white"
+        android:alpha="0.5"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/package_tv_pack2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:text="该包裹中已装入的快件如下："
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/package_tv_unpack2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:text="该包裹中待分拣快件如下："
+            android:textSize="18sp"/>
+    </RelativeLayout>
+    <!--顶部区域结束-->
+
+    <View
+    	android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine" />
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ListView
+            android:id="@+id/lv_icons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorWhite"></ListView>
+
+
+
+        <RelativeLayout
+            android:id="@+id/package_paisong_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:alpha="0.9"
+            android:layout_alignParentBottom="true"
+            >
+            <TextView
+                android:id="@+id/package_paisong_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="开始派送"
+                android:visibility="gone"
+                />
+            <TextView
+                android:id="@+id/package_paisong_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="完成派送"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/package_edit_bt_finishpack"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/btn_orange_selector"
+                android:gravity="center"
+                android:text="完成打包"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

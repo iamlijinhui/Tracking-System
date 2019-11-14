@@ -1,0 +1,94 @@
+<resources>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!--边框-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--半透明-->
+        <item name="android:windowNoTitle">true</item>
+        <!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--模糊-->
+    </style>
+
+
+    <style name="click">
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+    
+	<style name="Bar">
+    	<item name="android:layout_width">match_parent</item>
+    	<item name="android:layout_height">@dimen/bar_height</item>
+    	<item name="android:paddingRight">@dimen/horizontal_padding</item>
+    	<item name="android:paddingLeft">@dimen/horizontal_padding</item>
+	</style>
+    
+    <style name="Bar.White">
+    	<item name="android:background">@color/colorWhite</item>
+	</style>
+    
+    <style name="Bar.White.Selectable">
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Icon">
+        <item name="android:layout_width">@dimen/icon_Size</item>
+        <item name="android:layout_height">@dimen/icon_Size</item>
+    </style>
+    
+    <!-- 以上新建 -->
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+
+    </style>
+    
+     <style name="MyAppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+         <item name="android:background">#54BA42</item>
+        <item name="android:backgroundStacked">#54BA42</item>
+
+    </style>
+
+
+
+    <!-- 自定义actionBar  未知错误-->
+
+    <style name="CustomActionBarTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+        <item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
+
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#f4842d</item>
+        <item name="android:backgroundStacked">#d27026</item>
+    </style>
+    <style name="MyActionBarTitleText" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#fff</item>
+    </style>
+    <style name="MyActionBarTabText"
+        parent="@android:style/Widget.Holo.ActionBar.TabText">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+</resources>

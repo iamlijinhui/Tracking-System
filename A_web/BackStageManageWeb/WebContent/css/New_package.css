@@ -1,0 +1,163 @@
+.exlist{
+    background-color:#fff;
+    margin:30px 0 0 10px;
+    padding:5px;
+    width:680px;
+    min-height:200px;
+    height:auto;
+    font-family:"微软雅黑";
+    border-left: 1px solid #8c8c8c;
+    /*-webkit-box-shadow:4px 4px 5px #333;*//*webkit*/
+    /*-moz-box-shadow:4px 4px 5px #333;*//*firefox*/
+    /*box-shadow:4px 4px 5px #333;*//*opera或ie9*/
+}
+
+#title{
+    width:200px;
+    margin:20px auto;
+}
+
+#title legend{
+    font-size:26px;
+}
+
+div.exlist_title{
+    background-color:#fff;
+    width:680px;
+    height:20px;
+}
+
+div.exlist_title img{
+    float:right;
+    margin:-15px 10px;
+}
+
+/*-----------form-----------*/
+
+fieldset{
+    width:90%;
+    border:1px dashed #666;
+    margin:40px auto;
+}
+
+legend{
+    background-color:#fff;
+    height:120px;
+    height:30px;
+    color:#630;
+    font-weight:bolder;
+    font-size:20px;
+    line-height:30px;
+    margin:-20px 10px 10px;
+    padding:0 10px;
+}
+#title legend{
+    border-bottom: none;
+}
+div.row{
+    margin:10px;
+    padding:5px;
+}
+
+div.row label{
+    height:20px;
+    font-size:16px;
+    line-height:20px;
+    margin:0 10px;
+}
+
+input.txt{
+    background-color:#fff;
+    color:#333;
+    width:150px;
+    height:20px;
+    margin:0 10px;
+    font-size:16px;
+    line-height:20px;
+    border:none;
+    border-bottom:1px solid #565656;
+}
+
+input.txt:focus{
+    color:#333;
+    background-color: #fff;
+    border-bottom:1px solid #F00;
+}
+
+select{
+    width:100px;
+}
+
+option{
+    text-align:center;
+}
+
+input.btn{
+    width:50px;
+    height:20px;
+    color:#000008B;
+    background-color: transparent;
+    border:0;
+    padding:0;
+}
+/*.btn_dh{*/
+    /*margin-left: 38px;*/
+/*}*/
+
+
+
+/* 头部导航 */
+.mynav{
+    margin:30px 0;
+}
+.mynav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.mynav li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.mynav a {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 15px;
+}
+
+.target {
+    position: absolute;
+    border-bottom: 4px solid transparent;
+    z-index: -1;
+    -webkit-transform: translateX(-60px);
+    transform: translateX(-60px);
+}
+
+.mynav a,
+.target {
+    -webkit-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
+
+
+
+/*footer  */
+.footer{
+    width: 680px;
+    height: 50px;
+    margin: 30px 0 0 10px;
+}
+.btn-dy{
+    float: left;
+    width: 100px;
+}

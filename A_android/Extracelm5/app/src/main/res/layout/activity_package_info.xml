@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context="extrace.ui.domain.PackageInfoActivity">
+
+
+    <!--上部分-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:gravity="center"
+        android:background="@drawable/bg"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/package_info_tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:text="返回"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="包裹信息"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/package_info_tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:text="保存"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <!--顶部区域结束-->
+
+
+    <!-- 垂直滚动区 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+            <RelativeLayout
+                style="@style/Bar.White"
+                android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:id="@+id/package_info_idtext"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="包裹号"/>
+
+                <TextView
+                    android:id="@+id/package_info_tv_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/package_info_idtext"
+                    android:background="@null"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+            <RelativeLayout
+                style="@style/Bar.White">
+
+                <TextView
+                    android:id="@+id/package_info_statustext"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="状态"/>
+
+                <EditText
+                    android:id="@+id/package_info_et_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/colorFont"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/package_info_statustext"
+                    android:visibility="gone"
+                    android:background="@null"/>
+                <Spinner
+                    android:id="@+id/package_info_spinner_package"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/package_info_statustext"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+            <RelativeLayout
+                style="@style/Bar.White"
+                android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:id="@+id/package_info_sourcetext"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="源网点"/>
+
+                <TextView
+                    android:id="@+id/package_info_tv_source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/colorFont"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/package_info_sourcetext"/>
+
+
+                <ImageView
+                    android:id="@+id/package_info_iv_ssearch"
+                    style="@style/Icon"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/search"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+
+            <RelativeLayout
+                style="@style/Bar.White"
+                android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+
+            <TextView
+                    android:id="@+id/package_info_targettext"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="目标网点"/>
+
+                <TextView
+                    android:id="@+id/package_info_tv_target"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/colorFont"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/package_info_targettext"/>
+
+
+                <ImageView
+                    android:id="@+id/package_info_iv_tsearch"
+                    style="@style/Icon"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/search"/>
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+
+            <RelativeLayout
+                style="@style/Bar.White">
+
+                <TextView
+                    android:id="@+id/package_info_timetext"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="创建时间"/>
+
+                <TextView
+                    android:id="@+id/package_info_tv_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/colorFont"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/package_info_timetext"
+                    android:background="@null"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

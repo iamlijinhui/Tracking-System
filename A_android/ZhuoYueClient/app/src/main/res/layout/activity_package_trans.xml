@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context="Client.ui.domain.PackageTransActivity">
+
+
+    <!--上部分-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:gravity="center"
+        android:background="@drawable/bg"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:text=""
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/package_trans_tv_packagetrans"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="包裹转运"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:text=""
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <!--顶部区域结束-->
+
+
+        <RelativeLayout
+            style="@style/Bar.White"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                style="@style/Icon"
+                android:id="@+id/package_info_package_icon"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ppackage"/>
+            <TextView
+                android:id="@+id/package_info_sourcetext"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/package_info_package_icon"
+                android:text="包裹号"/>
+
+            <EditText
+                android:id="@+id/package_trans_et_pid"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/colorFont"
+                android:textSize="15sp"
+                android:background="@null"
+                android:layout_toRightOf="@+id/package_info_sourcetext"/>
+
+
+            <ImageView
+                android:id="@+id/package_trans_iv_scan"
+                style="@style/Icon"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/pscan"/>
+        </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorLine" />
+
+    <Button
+        android:id="@+id/package_trans_bt_ok"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/btn_orange_selector"
+
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="确认转运"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+
+
+
+
+
+
+</LinearLayout>

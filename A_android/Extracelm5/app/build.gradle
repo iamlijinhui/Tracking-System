@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.example.pan.extracelmln5"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main() {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:appcompat-v7:26.0.0-beta1'
+    testImplementation 'junit:junit:4.12'
+    implementation files('libs/ZXing/core-3.0.0.jar')
+    implementation files('libs/Gson/gson-2.2.4.jar')
+    implementation 'com.android.support:recyclerview-v7:26.0.0-beta1'
+    implementation files('libs/BaiduLBS_Android.jar')
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

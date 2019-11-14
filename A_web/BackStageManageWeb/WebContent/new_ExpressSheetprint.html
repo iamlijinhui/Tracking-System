@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+	    <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	    <title>卓越快递 - 后台管理</title>		
+        <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' />
+		<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />    
+	    <!-- Css files -->
+	    <link href="assets/css/bootstrap.min.css" rel="stylesheet">		
+		<link href="assets/css/jquery.mmenu.css" rel="stylesheet">		
+		<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+		<link href="assets/css/climacons-font.css" rel="stylesheet">
+		<link href="assets/plugins/xcharts/css/xcharts.min.css" rel=" stylesheet">		
+		<link href="assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet">
+		<link href="assets/plugins/morris/css/morris.css" rel="stylesheet">
+		<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+		<link href="assets/plugins/jvectormap/css/jquery-jvectormap-1.2.2.css" rel="stylesheet">	    
+	    <link href="assets/css/style.min.css" rel="stylesheet">
+		<link href="assets/css/add-ons.min.css" rel="stylesheet">		
+        <link rel="stylesheet" href="css/New_package.css"/>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/index.css"/>
+        <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+	</head>
+</head>
+
+<body>
+          <table class="layui-hide" id="test"></table>        
+          <script src="layui/layui.js" charset="utf-8"></script>
+	<!-- 公共部分开始----------------------------------------------------- -->
+ 
+<div class="navbar" role="navigation">
+<div class="container-fluid">		
+			
+			<ul class="nav navbar-nav navbar-actions navbar-left">
+				<li class="visible-md visible-lg"><a href="new_package.html#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
+			</ul>
+			
+			<form class="navbar-form navbar-left">
+				<button type="submit" class="fa fa-search"></button>
+				<input type="text" class="form-control" placeholder="Search...">
+			</form>
+			
+	           <ul class="nav navbar-nav navbar-right">
+				
+				
+				<li class="dropdown visible-md visible-lg">
+	        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="userInfo1"><img class="user-avatar" src="assets/img/avatar.jpg" alt="user-mail"><span>null</span></a>
+	        		<ul class="dropdown-menu">
+						<li class="dropdown-menu-header">
+						
+						</li>						
+						<li><a href="userInfo.html" id="userInfo2"><i class="fa fa-user"></i> 用户详情</a></li>
+						
+						<li class="divider"></li>						
+						<li><a  onclick="logout();"><i class="fa fa-sign-out"></i> 退出</a></li>	
+	        		</ul>
+	      		</li>
+				<li><a onclick="logout();"><i class="fa fa-power-off"></i></a></li>
+			</ul>
+			
+		</div>
+		</div>
+		
+		<div class="container-fluid content">
+	
+		<div class="row">
+				
+			<!-- start: Main Menu -->
+			<div class="sidebar ">
+								
+				<div class="sidebar-collapse">
+					<div class="sidebar-header t-center">
+                        <span><i class="fa fa-space-shuttle fa-3x blue"></i></span>
+                    </div>										
+					<div class="sidebar-menu">						
+						<ul class="nav nav-sidebar">
+							<li><a href="welcome.html" id="welcome"><i class="fa fa-laptop"></i><span class="text"> 卓越快递</span></a></li>
+							<li>
+								<a href="#"><i class="fa fa-file-text"></i><span class="text"> 用户管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									<li><a href="user_manage.html" id="user_manage"><i class="fa fa-car"></i><span class="text"> 用户管理</span></a></li>
+									<li><a href="user_add.html" id="user_add"><i class="fa fa-pencil"></i><span class="text"> 添加用户</span></a></li>
+								
+								</ul>	
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-list-alt"></i><span class="text"> 快递揽收</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									<li><a href="package_search.html"><i class="fa fa-font"></i><span class="text"> 包裹查询</span></a></li>
+								    <li><a href="package_build.html"><i class="fa fa-retweet"></i><span class="text"> 新建包裹单</span></a></li>
+									
+								    <li><a href="#"><i class="fa fa-random"></i><span class="text"> 快递打包</span></a></li>
+									<li><a href="#"><i class="fa fa-retweet"></i><span class="text"> 快递拆包</span></a></li>
+									<li><a href="#"><i class="fa fa-bar-chart-o"></i><span class="text"> 快递交接</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-signal"></i><span class="text"> 包裹处理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									<li><a href="package_search.html"><i class="fa fa-font"></i><span class="text"> 包裹查询</span></a></li>
+								<li><a href="package_build.html"><i class="fa fa-retweet"></i><span class="text"> 新建包裹单</span></a></li>
+									<li><a href="package_tongji.html"><i class="fa fa-tags"></i><span class="text"> 包裹统计</span></a></li>
+								
+								</ul>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-briefcase"></i><span class="text"> 快递派送</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+								<li><a href="package_deliver.html"><i class="fa fa-retweet"></i><span class="text"> 派送快递</span></a></li>
+								</ul>	
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-life-bouy"></i><span class="text"> 快递查询</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									
+									<li><a href="express_search.html"><i class="fa fa-retweet"></i><span class="text"> 运单详情查询</span></a></li>
+									
+								</ul>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-bolt"></i><span class="text"> 客户管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">									
+									<li><a href="customer_manage.html" id="customer_manage"><i class="fa fa-meh-o"></i><span class="text"> 客户管理</span></a></li>
+									<li><a href="customer_add.html" id="customer_add"><i class="fa fa-plus-square-o"></i><span class="text"> 客户添加</span></a></li>	
+									<li><a href="customer_search.html" id="customer_search"><i class="fa fa-tags"></i><span class="text"> 客户搜索</span></a></li>
+									
+								</ul>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-list-alt"></i><span class="text"> 运单打印</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									<li><a href="new_ExpressSheetprint.html"><i class="fa fa-indent"></i><span class="text"> 打印快递单</span></a></li>
+									<li><a href="new_package.html"><i class="fa fa-tags"></i><span class="text"> 打印包裹单</span></a></li>									
+								</ul>
+							</li>
+							</ul>
+					</div>					
+				</div>
+				<div class="sidebar-footer">					
+										
+				</div>	
+				
+			</div>
+			</div>
+	
+	<!-- 公共部分结束----------------------------------------------------- -->
+	
+	
+		<!-- start: Content -->
+		<div class="main">		
+			<div class="row">
+				<div class="col-lg-12">
+					<h3 class="page-header"><i class="fa fa-laptop"></i> 生成快递单单</h3>
+					<ol class="breadcrumb">
+						<li><i class="fa fa-home"></i><a href="welcome.html">首页</a></li>											  	
+					</ol>
+				</div>
+			</div>
+			<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="exlist" id="exlist">
+                <div class="exlist_title"></div>
+                <div id="title"><legend>快递信息</legend></div>
+                <form method="post" action="" id="printArea">
+                    <fieldset>
+                        <legend>收件信息</legend>
+                        <div class="row">
+                            <label>1. 收货人&联系电话:</label><br/>
+                            <input type="text" style="width: 100%;" class="form-control" placeholder="请填写收货人姓名" >
+                 </div>
+                        <div class="row">
+                            <input type="text" style="width: 100%;" class="form-control" placeholder="请填写收件人的手机号码" >
+                            
+                        </div>
+                        <div class="row">
+                            <label>2. 详细地址:</label>
+                            <br/>
+                            <textarea name="详细地址"   placeholder="请您在此文本框内填写详细的地址" class="form-control"></textarea>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>发件信息</legend>
+                        <div class="row">
+                            <label>1. 发货人&联系电话:</label>
+                            <input type="text" style="width: 100%;" class="form-control" placeholder="请填写发货人姓名" >
+                            
+                        </div>
+                        <div class="row">
+                        <input type="text" style="width: 100%;" class="form-control" placeholder="请填写发货人的手机号码" >
+                             </div>
+                        <div class="row">
+                            <label>2. 详细地址:</label>
+                            <textarea name="详细地址"   placeholder="请您在此文本框内填写详细的地址" class="form-control"></textarea>
+                           
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>货物信息</legend>
+                        <div class="row">
+                            <label>1. 数量:</label><input class="txt" style="width:30px" maxlength="2" type="text" />
+                            <label>（1-99件）</label>
+                            <label>2. 体积:</label><input class="txt" style="width:30px" maxlength="3" type="text" />
+                            <label>3. 重量:</label><input class="txt" style="width:30px" maxlength="3" type="text" />
+                            <label>（Kg）</label>
+                        </div>
+                        <div class="row">
+                            <label>4. 运输方式:</label>
+                            <select class="form-control" style="width: 20%; margin-left: 28px; font-size: 15px;">
+                                <option>航运</option>
+                                <option>火车</option>
+                                <option>汽车</option>
+                                <option>轮船</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <label>5. 邮编:</label>
+                            <input type="text" class="form-control" style="width: 100%; margin-left: 28px;"/>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn_dh">
+                        <div id="bcTarget" style="width: 300px;
+                                      height: 120px;
+                                      margin-top: 20px;">
+
+                        </div>
+                        <div class="input-group">
+                              <span class="input-group-btn">
+                                  <input type="text" style="width: 75%;" class="form-control" placeholder="随即生成快递单号" id="ydh">
+                                <button class="btn btn-default" type="button" id="sc_ydh">生成快递单号</button>
+                              </span>
+                        </div>
+                       
+                    </div>
+                </form>
+            </div>
+            <div class="footer">
+                <div class="btn_dy">
+                    <button class="btn btn-default" id="btnPrint" style="width:20%;">打印</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+		
+	<!--end: Content -->	
+	<!-- start: JavaScript-->
+	<!-- 引入功能js---------------------------- -->
+		<script src="assets/js/jquery-1.11.1.min.js"></script>		
+		<script src="assets/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/controlLogin.js"></script>
+        <script type="text/javascript" src="js/logout.js"></script>
+		<script type="text/javascript" src="js/getUID.js"></script>
+		<script type="text/javascript" src="js/showUserId.js"></script>       
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="lib/jquery/jquery.jqprint-0.3.js"></script>
+        <script src="lib/jquery/jquery-barcode-2.0.1.js"></script>
+		<script type="text/javascript" src="js/newpackage.js"></script>
+	<!-- 引入功能js---------------------------- -->
+	<!--[if !IE]>-->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery-2.1.1.min.js'>"+"<"+"/script>");
+		</script>
+
+	<!--<![endif]-->
+
+	<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>	
+	<!-- page scripts -->
+	<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+	<script src="assets/plugins/touchpunch/jquery.ui.touch-punch.min.js"></script>
+	<script src="assets/plugins/moment/moment.min.js"></script>
+	<script src="assets/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+	<!--[if lte IE 8]>
+		<script language="javascript" type="text/javascript" src="assets/plugins/excanvas/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="assets/plugins/flot/jquery.flot.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.pie.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.stack.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.resize.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.time.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.spline.min.js"></script>
+	<script src="assets/plugins/xcharts/js/xcharts.min.js"></script>
+	<script src="assets/plugins/autosize/jquery.autosize.min.js"></script>
+	<script src="assets/plugins/placeholder/jquery.placeholder.min.js"></script>
+	<script src="assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatables/js/dataTables.bootstrap.min.js"></script>
+	<script src="assets/plugins/raphael/raphael.min.js"></script>
+	<script src="assets/plugins/morris/js/morris.min.js"></script>
+	<script src="assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="assets/plugins/jvectormap/js/gdp-data.js"></script>	
+	<script src="assets/plugins/gauge/gauge.min.js"></script>
+	
+	
+	<!-- theme scripts -->
+	<script src="assets/js/SmoothScroll.js"></script>
+	<script src="assets/js/jquery.mmenu.min.js"></script>
+	<script src="assets/js/core.min.js"></script>
+	<script src="assets/plugins/d3/d3.min.js"></script>	
+	
+	<!-- inline scripts related to this page -->
+	<script src="assets/js/pages/index.js"></script>	
+	
+	<!-- end: JavaScript-->
+	
+</body>
+</html>

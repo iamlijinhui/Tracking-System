@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/ts/daoBase/BaseDao.java=UTF-8
+encoding//src/ts/daoBase/IBaseDao.java=UTF-8
+encoding//src/ts/interceptor/Authorization.java=UTF-8
+encoding//src/ts/model/ErrorMessage.java=UTF-8
+encoding//src/ts/model/UsersPackage.java=UTF-8
+encoding//src/ts/serviceException/InvokeFaultExceptionMapper.java=UTF-8
+encoding//src/ts/serviceException/ServiceExceptionEntity.java=UTF-8
+encoding//src/ts/util/JwtToken.java=UTF-8

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_round_white"
+        android:orientation="vertical" >
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="最近处理该包裹人员信息"
+        android:textSize="16sp"
+
+        android:background="@drawable/bg_round_blue"
+        android:textColor="@color/white"/>
+
+    <RelativeLayout
+        style="@style/Bar.White"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:id="@+id/package_first_icon"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="姓名"/>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColor="@color/colorFont"
+            android:layout_toRightOf="@+id/package_first_icon"
+            android:background="@null"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine" />
+
+    <RelativeLayout
+        style="@style/Bar.White">
+        <TextView
+            android:id="@+id/package_first_icon"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="电话"/>
+
+        <TextView
+            android:id="@+id/user_telphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorFont"
+            android:textSize="15sp"
+            android:autoLink="email|phone|web"
+            android:layout_toRightOf="@+id/package_first_icon"
+            android:background="@null"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine" />
+
+    <RelativeLayout
+        android:background="@drawable/bg_round_white"
+        style="@style/Bar.White">
+        <TextView
+            android:id="@+id/package_first_icon"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="部门ID"/>
+
+        <TextView
+            android:id="@+id/user_depart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorFont"
+            android:textSize="15sp"
+            android:layout_toRightOf="@+id/package_first_icon"
+            android:background="@null"/>
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:lineSpacingExtra="3dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="30dp"
+        android:text="签到成功，获得200积分"
+        android:textSize="12sp"
+        android:visibility="gone"
+        android:textColor="@color/gray"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/dialog"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="取消"
+            android:textSize="15sp"
+            android:textColor="@color/gray"/>
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorLine"
+            android:visibility="gone"
+            />
+
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_round_white"
+            android:gravity="center"
+            android:layout_weight="1.0"
+            android:text="确认"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:textColor="@color/gray"/>
+
+    </LinearLayout>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <ImageView
+            android:id="@+id/user_cancel"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:src="@drawable/close_circle"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,178 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context="extrace.ui.main.ExpressEditActivity$ExpressEditFragment2" >
+
+    <!-- 垂直滚动区 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                style="@style/Bar.White"
+                >
+
+                <TextView
+                    android:id="@+id/express_expand_tv_type"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="类型"/>
+
+                 <EditText
+                     android:id="@+id/express_expand_et_type"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_centerVertical="true"
+                     android:textSize="15sp"
+                     android:layout_toRightOf="@+id/express_expand_tv_type"
+                     android:background="@null"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+            <RelativeLayout
+                style="@style/Bar.White"
+                >
+
+                <TextView
+                    android:id="@+id/express_expand_tv_weight"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="质量"/>
+
+                <EditText
+                    android:id="@+id/express_expand_et_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/express_expand_tv_weight"
+                    android:background="@null"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="17dp"
+                android:background="@color/colorLine" />
+
+            <RelativeLayout
+                style="@style/Bar.White"
+                >
+
+                <TextView
+                    android:id="@+id/express_expand_tv_transFee"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="运费"/>
+
+                <EditText
+                    android:id="@+id/express_expand_et_transFee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/express_expand_tv_transFee"
+                    android:background="@null"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+            <RelativeLayout
+                style="@style/Bar.White"
+                >
+
+                <TextView
+                    android:id="@+id/express_expand_tv_packageFee"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="包裹费"/>
+
+                <EditText
+                    android:id="@+id/express_expand_et_packageFee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/express_expand_tv_packageFee"
+                    android:background="@null"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+            <RelativeLayout
+                style="@style/Bar.White"
+                >
+
+                <TextView
+                    android:id="@+id/express_expand_tv_InsuFee"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="保险费"/>
+
+                <EditText
+                    android:id="@+id/express_expand_et_InsuFee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/express_expand_tv_InsuFee"
+                    android:background="@null"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="17dp"
+                android:background="@color/colorLine" />
+
+            <RelativeLayout
+                style="@style/Bar.White"
+                >
+
+                <TextView
+                    android:id="@+id/express_expand_tv_accepter"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="揽收员"/>
+
+                <EditText
+                    android:id="@+id/express_expand_et_accepter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/express_expand_tv_accepter"
+                    android:background="@null"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

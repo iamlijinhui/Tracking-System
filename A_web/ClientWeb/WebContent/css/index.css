@@ -1,0 +1,82 @@
+body{
+    font-family:"Microsoft YaHei", sans-serif;
+}
+#navbar{
+    margin-bottom: 20px;
+}
+.navbar-default{
+    background-color: #fff;
+    border: none;
+    box-shadow:0 2px 8px 0 rgba(50,50,50,0.25);
+}
+.navbar-default .navbar-brand{
+    font-size: 30px;
+    font-weight: bold;
+    color: #40D2B1;
+    height: 70px;
+    line-height: 35px;
+}
+.navbar-default .navbar-nav>li>a{
+    font-size: 16px;
+    font-weight: bold;
+    color:#666;
+    height: 70px;
+    line-height: 35px;
+}
+.navbar-toggle{
+    margin-top: 17px;
+}
+.navbar-default .navbar-toggle:hover{
+    border-color: #40D2B1;
+    background-color: rgb(69,210,184);
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: #1C9982;
+}
+
+
+
+/*用户管理*/
+.page-header{
+    margin-top: 0;
+}
+.page-header h1{
+    margin: 0;
+    font-size: 16px;
+}
+.user_search{
+    padding:10px;
+    border:solid 1px #ddd;
+    border-top: none;
+}
+
+/*浮动框*/
+#right{
+    border-radius: 5%;
+    position: fixed;
+    bottom: 100px;
+    width: 100px;
+    height: 200px;
+    /*line-height: 200px;*/
+    text-align: center;
+    border: 1px solid #000;
+    background: url(../img/016.jpg) no-repeat;
+    background-size:100% 60%;
+}
+#right{
+    right: 0;
+}
+/*在线客服*/
+.OnlineService_Bg {width:100px;overflow:hidden;position:fixed;right:10px;bottom:20px;z-index:10;}
+.OnlineService_Box {width:100%;overflow:hidden;}
+.OnlineService_QQBox {width:88px;overflow:hidden;border:1px solid #cecece;margin-bottom:10px;background:#f5f5f5;}
+.OnlineService_QQBox li {width:auto;height:35px;overflow:hidden;padding-left:34px;font-size:12px;line-height:35px;color:#666;background:url(../img/icon_QQ1.png) no-repeat 5px center;cursor:pointer}
+.OnlineService_QQBox li:hover {filter:alpha(opacity=50); /*IE滤镜，透明度50%*/-moz-opacity:0.5; /*Firefox私有，透明度50%*/opacity:0.5;/*其他，透明度50%*/}
+.OnlineService_QQBox li a {text-decoration: none;color: #666;}
+.OnlineService_Phone {width:90px;height:90px;margin-bottom:10px;}
+.OnlineService_Phone a {display:block;width:90px;height:90px;background-color:#e33043;padding-top:57px;line-height:30px;font-size:16px;text-align:center;color:#fff;background-image:url(../img/icon_Online.png);background-repeat:no-repeat;background-position:center 8px;cursor:pointer;text-decoration:none;color:#fff}
+.OnlineService_Sign {width:90px;height:90px;margin-bottom:10px;background-color:#e33043;padding-top:57px;line-height:30px;font-size:16px;text-align:center;color:#fff;cursor:pointer;background-image:url(../img/icon_Sign.png);background-repeat:no-repeat;background-position:center 10px;}
+.OnlineService_Top {width:90px;height:90px;margin-bottom:10px;}
+.OnlineService_Top a {display:block;width:90px;height:90 px;background-color:#e33043;padding-top:57px;line-height:30px;font-size:16px;text-align:center;color:#fff;background-image:url(../img/icon_Top.png);background-repeat:no-repeat;background-position:center 8px;cursor:pointer;text-decoration:none;color:#fff}
+
+

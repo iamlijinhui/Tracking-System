@@ -1,0 +1,226 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+
+    tools:context="extrace.ui.main.UserInfoActivity" >
+
+     
+    <!--上部分-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+      
+        android:gravity="center"
+        android:background="@color/colorMyBackground"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/userinfo_tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:text="返回"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="个人中心"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+        
+        
+        <TextView
+            android:id="@+id/userinfo_tv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:text="设置"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <!--顶部区域结束-->
+    
+    <!-- 垂直滚动区 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+				android:background="@color/colorMyBackground"
+                android:gravity="center"
+                android:orientation="vertical">
+                <!--头像显示-->
+                <ImageView
+                    android:id="@+id/user_iv_head"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/user" />
+
+                <TextView
+                    android:id="@+id/user_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="用户名"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+            
+            <RelativeLayout
+        		android:id="@+id/user_info_mypackage"
+        		style="@style/Bar.White.Selectable"
+        		android:layout_marginTop="@dimen/activity_vertical_margin">
+        		<ImageView
+            		android:id="@+id/package_first_icon"
+            		style="@style/Icon"
+            		android:layout_centerVertical="true"
+            		android:src="@drawable/user"/>
+        
+         		<TextView
+            		android:layout_width="wrap_content"
+            		android:layout_height="wrap_content"
+            		android:layout_centerVertical="true"
+            		android:layout_toRightOf="@+id/package_first_icon"
+            		android:text="我的包裹"/>
+        
+        		<ImageView
+            		android:id="@+id/package_go"
+            		style="@style/Icon"
+            		android:layout_centerVertical="true"
+            		android:layout_alignParentRight="true"
+            		android:src="@drawable/next"/>
+    		</RelativeLayout>
+    		
+    		<View
+            	android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+            
+    		
+           <RelativeLayout
+				android:id="@+id/user_information"
+        		style="@style/Bar.White.Selectable">
+        		<ImageView
+            		android:id="@+id/user_information_firsticon"
+            		style="@style/Icon"
+            		android:layout_centerVertical="true"
+            		android:src="@drawable/user"/>
+        
+         		<TextView
+            		android:layout_width="wrap_content"
+            		android:layout_height="wrap_content"
+            		android:layout_centerVertical="true"
+            		android:layout_toRightOf="@+id/user_information_firsticon"
+            		android:text="我的消息"/>
+        
+        		<ImageView
+            		android:id="@+id/user_information__go"
+            		style="@style/Icon"
+            		android:layout_centerVertical="true"
+            		android:layout_alignParentRight="true"
+            		android:src="@drawable/next"/>
+    		</RelativeLayout>
+    		
+           <View
+            	android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+           
+            <RelativeLayout
+				android:id="@+id/user_position"
+        		style="@style/Bar.White.Selectable"
+        		android:layout_marginTop="@dimen/activity_vertical_margin">
+        		<ImageView
+            		android:id="@+id/user_position_firsticon"
+            		style="@style/Icon"
+            		android:layout_centerVertical="true"
+            		android:src="@drawable/user"/>
+        
+         		<TextView
+            		android:layout_width="wrap_content"
+            		android:layout_height="wrap_content"
+            		android:layout_centerVertical="true"
+            		android:layout_toRightOf="@+id/user_position_firsticon"
+            		android:text="我的位置"/>
+        
+        		<ImageView
+            		android:id="@+id/user_position__go"
+            		style="@style/Icon"
+            		android:layout_centerVertical="true"
+            		android:layout_alignParentRight="true"
+            		android:src="@drawable/next"/>
+    		</RelativeLayout>
+    		
+             <View
+            	android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+			<RelativeLayout
+				android:id="@+id/user_info_errorpackage"
+				style="@style/Bar.White.Selectable"
+				>
+				<ImageView
+					android:id="@+id/user_info_errorpackage_firsticon"
+					style="@style/Icon"
+					android:layout_centerVertical="true"
+					android:src="@drawable/user"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:layout_toRightOf="@+id/user_info_errorpackage_firsticon"
+					android:text="错误快件"/>
+
+				<ImageView
+					android:id="@+id/user_info_errorpackage_firsticon_go"
+					style="@style/Icon"
+					android:layout_centerVertical="true"
+					android:layout_alignParentRight="true"
+					android:src="@drawable/next"/>
+			</RelativeLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/colorLine" />
+
+         	<TextView
+        		android:id="@+id/user_tv_logout"
+       			android:layout_width="match_parent"
+				style="@style/click"
+        		android:layout_height="50dp"
+        		android:layout_marginLeft="1dp"
+        		android:layout_marginRight="1dp"
+        		android:background="@color/colorSelectedIcon"
+        		android:gravity="center"
+        		android:text="退 出"
+        		android:textColor="#ffffff"
+        		android:textSize="18sp" />     
+            
+        </LinearLayout>
+    </ScrollView>
+    
+
+       
+</LinearLayout>

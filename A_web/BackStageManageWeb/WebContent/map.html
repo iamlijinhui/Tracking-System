@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>CanvasLayer</title>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=F8GGZGTAevRPL7BwLtTjQvEzdAlpzqTt"></script>
+<style type="text/css">
+body, html,#container {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+</style>
+ 
+
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+		<script src="assets/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    
+</body>
+</html>
+<script type="text/javascript">
+
+   var map = new BMap.Map("container");
+    var point = new BMap.Point(116.404, 39.915);
+    map.centerAndZoom(point, 15);
+    map.enableScrollWheelZoom(); // 开启鼠标滚轮缩放
+    map.addControl(new BMap.ScaleControl()); // 添加比例尺控件
+ 
+    var pointStr = "100.000000,32.021585,104.038748,30.641821,104.047789,30.648128,104.063959,30.655336,104.067264,30.660307,104.067264,30.664438,104.064008,30.665316".split(",");
+    var pointArr = [];
+    var eid=$.cookie('mapID');
+    var exp=null;
+    $.cookie('mapID',null,{path:'/'});
+   
+    $.ajax({
+        type:"get",
+        url:"http://localhost:8080/TestCxfHibernate/REST/Domain/getPosition/"+eid,
+        beforeSend:function(request){  request.setRequestHeader("token",$.cookie('userToken'));   },
+        async:false,
+        dataType:"json",	    
+        success:function(data){
+   
+       	 if(data.code==102){
+       		 alert("信息获取失败！");
+       	 }
+       	 else{
+       		 
+      
+            var con="";   
+            
+            $.each(data,function(i,item){
+            	pointArr.push({
+                    lng: item.y,
+                    lat: item.x
+                });
+            });
+            
+            
+       	 }
+        },
+        error:function(){
+            
+        }
+    });
+    
+    $.ajax({
+        type:"get",
+        url:"http://localhost:8080/TestCxfHibernate/REST/Domain/getPath/"+eid,
+        beforeSend:function(request){  request.setRequestHeader("token",$.cookie('userToken'));   },
+        async:false,
+        dataType:"json",	    
+        success:function(data){
+   
+       	 if(data.code==102){
+       		 alert("信息获取失败！");
+       	 }
+       	 else{
+       		 exp=data[data.length-1].status;
+      
+       	 }
+        },
+        error:function(){
+            
+        }
+    });
+
+    
+    // 生成坐标点
+    var trackPoint = [];
+    for (var i = 0, j = pointArr.length; i < j; i++) {
+        trackPoint.push(new BMap.Point(pointArr[i].lng, pointArr[i].lat));
+    }
+ 
+    map.centerAndZoom(trackPoint[0], 15);
+    
+    // 画线
+    var polyline = new BMap.Polyline(trackPoint, {
+        strokeColor: "#1869AD",
+        strokeWeight: 3,
+        strokeOpacity: 1
+    });
+    map.addOverlay(polyline);
+       
+    ///////////
+    // 配置图片
+    var size = new BMap.Size(26,50);
+    var offset = new BMap.Size(0, -5);
+    var imageSize = new BMap.Size(26, 26);
+    var icon1 = new BMap.Icon("./image/Icon_start.png", size, {
+        imageSize: imageSize
+    });
+    var icon2 = new BMap.Icon("./image/Icon_bus_station.png", size, {
+        imageSize: imageSize
+    });
+    var icon3 = new BMap.Icon("./image/Icon_shou.png", size, {
+        imageSize: imageSize
+    });
+    var count=trackPoint.length-1;
+  var marker1 = new BMap.Marker(trackPoint[0], {
+         icon: icon1,
+        
+     }); // 创建标注  
+     var marker2 = new BMap.Marker(trackPoint[count], {
+         icon: icon2,
+        
+     }); // 创建标注  
+     var marker3 = new BMap.Marker(trackPoint[count], {
+         icon: icon3,
+        
+     }); // 创建标注  
+     
+     map.addOverlay(marker1);// 画图标
+     
+     if(exp==5){
+    	 map.addOverlay(marker3);
+     }
+     else{
+    	 map.addOverlay(marker2);
+     }
+     
+    ///////////////
+  
+
+    //根据经纬极值计算绽放级别。 (从网上复制)
+    function getZoom(maxLng, minLng, maxLat, minLat) {
+        var zoom = ["50", "100", "200", "500", "1000", "2000", "5000", "10000", "20000", "25000", "50000", "100000", "200000", "500000", "1000000", "2000000"]; // 级别18到3。
+        var pointA = new BMap.Point(maxLng, maxLat); // 创建点坐标A
+        var pointB = new BMap.Point(minLng, minLat); // 创建点坐标B
+        var distance = map.getDistance(pointA, pointB).toFixed(1); //获取两点距离,保留小数点后两位
+        for (var i = 0, zoomLen = zoom.length; i < zoomLen; i++) {
+            if (zoom[i] - distance > 0) {
+                return 18 - i + 3; //之所以会多3，是因为地图范围常常是比例尺距离的10倍以上。所以级别会增加3。
+            }
+        }
+    }
+    
+    //  (从网上复制)
+    function setZoom(points) {
+        if (points.length > 0) {
+            var maxLng = points[0].lng;
+            var minLng = points[0].lng;
+            var maxLat = points[0].lat;
+            var minLat = points[0].lat;
+            var res;
+            for (var i = points.length - 1; i >= 0; i--) {
+                res = points[i];
+                if (res.lng > maxLng) maxLng = res.lng;
+                if (res.lng < minLng) minLng = res.lng;
+                if (res.lat > maxLat) maxLat = res.lat;
+                if (res.lat < minLat) minLat = res.lat;
+            }
+            var cenLng = (parseFloat(maxLng) + parseFloat(minLng)) / 2;
+            var cenLat = (parseFloat(maxLat) + parseFloat(minLat)) / 2;
+            var zoom = getZoom(maxLng, minLng, maxLat, minLat);
+            map.centerAndZoom(new BMap.Point(cenLng, cenLat), zoom);
+        } else {
+            //没有坐标，显示全中国
+            map.centerAndZoom(new BMap.Point(103.388611, 35.563611), 5);
+        }
+    }
+ 
+    setZoom(pointArr)
+</script>

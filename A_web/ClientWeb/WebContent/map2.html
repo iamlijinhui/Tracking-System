@@ -1,0 +1,149 @@
+                                                                                                                                                                                                         >
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>物流查询</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+    body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nodjP6ABTx2Tekq3Us3gOxRBpX0nguHn"></script>
+	<script src="lib/jquery/jquery.min.js"></script>
+  <style type="text/css">
+
+body, html{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{height:500px;width:100%;}
+		#r-result{width:100%; font-size:14px;}
+  *{margin:0px; padding:0px;}
+  body{background:url("images/bg.jpg");position:absolute; width:100%;height:100%;}
+  #Main{width:1000px;height:600px;margin:80px auto 0px; position:relative;}
+  #Main .title{height:50px; background:#3397e4;color:#fff; font-size:26px; text-align:center;
+				line-height:50px;font-weight:bold;}
+  #Main #Map{height:550px;}
+
+  #Main .Search{width:615px;height:40px;background:#fff; position:absolute; top:100px;left:180px; box-shadow:0px 0px 20px #000;}
+  #Main .Search input.txt{width:515px;height:40px; border:0px;float:left; text-indent:10px;}
+  #Main .Search input.but{width:100px;height:40px; background:#690; border:0px;
+						float:left; color:#fff;font-size:14px; font-family:"微软雅黑";}
+
+  #Main .Menu{width:110px;height:120px; background:#fff; box-shadow:0px 0px 10px #000;}
+  #Main .Menu ul li{list-style-type:none; height:30px; font-size:12px; line-height:30px;
+			text-align:Center; border-bottom:1px dotted #ccc;}
+  #Main .Menu ul li:hover{background:#3397e4;color:#fff;}
+  </style>
+ </head>
+ <body>
+	<div id="Main">
+		<div class="title">寄快递用速达快递</div>
+
+		<!--地图开始-->
+		<div id="Map"></div>
+		<!--地图结束-->
+
+		<!--搜索开始-->
+		<div class="Search">
+			<input id="cityName" placeholder="请输入运单号" type="text" class="txt">
+			<input id="query" value="搜  索" type="button" class="but">
+		</div>
+		
+	</div>
+
+		
+	<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("Map");    // 创建Map实例
+	var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+	var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
+   map.centerAndZoom(new BMap.Point(113.542, 34.8288), 14);  // 初始化地图,设置中心点坐标和地图级别
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+	map.addControl(top_left_control);        
+		map.addControl(top_left_navigation);     
+		map.addControl(top_right_navigation);  
+  var sy = new BMap.Symbol(BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW, {
+    scale: 0.6,//图标缩放大小
+    strokeColor:'#fff',//设置矢量图标的线填充颜色
+    strokeWeight: '2',//设置线宽
+});
+
+ 	
+
+var icons = new BMap.IconSequence(sy, '10', '30');
+ $("#query").click(function(){
+var x;
+var y;
+ var points = []; 
+ 
+ var id=$("#cityName").val();
+ alert(id);
+ 
+ 
+ 
+ 
+$.ajax({
+			url:"http://localhost:8080/TestCxfHibernate/REST/Domain/getPosition/"+id,
+			type:'get',
+		
+			dataType:'json',
+			
+			success:function(r){
+				 map.centerAndZoom(new BMap.Point(r[0].y, r[0].x),7);
+		    var a=r.length;
+            //  alert(a);			
+			
+			//创建动画标注点
+			var pt = new BMap.Point(r[0].y, r[0].x);
+			var myIcon = new BMap.Icon("http://lbsyun.baidu.com/jsdemo/img/fox.gif", new BMap.Size(300,157));
+			var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+			//map.addOverlay(marker2);              // 将标注添加到地图中
+			var point = new BMap.Point(r[a-1].y, r[a-1].x);
+  			var marker = new BMap.Marker(point);  // 创建标注
+			map.addOverlay(marker);               // 将标注添加到地图中
+			marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+			for(var c= 0;c&lt;a;c++){
+		       y= r[c].x;
+			    x=r[c].y;
+			points.push(new BMap.Point(x,y)); 
+			//alert(x);
+			//alert(points);
+			}
+	var polyline =new BMap.Polyline(points, {
+   enableEditing: false,//是否启用线编辑，默认为false
+   enableClicking: true,//是否响应点击事件，默认为true
+   icons:[icons],
+   strokeWeight:'8',//折线的宽度，以像素为单位
+   strokeOpacity: 0.8,//折线的透明度，取值范围0 - 1
+   strokeColor:"#18a45b" //折线颜色
+});
+
+map.addOverlay(polyline);          //增加折线
+map.addOverlay(marker2); 
+//map.addOverlay(marker);               // 将标注添加到地图中
+//marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+  
+			}
+					
+}) ;	
+		
+
+	//var x=113.234;
+	//var y=34.2394;
+ //  var points = [];  
+//for(var i = 0;i<4;i++){
+ 
+	//alert(x);
+
+	//points.push(new BMap.Point(x,y)); 
+	//x=x+10;
+	//y=y+15;
+//}
+
+	}) ;
+  
+</script>
+<div style="text-align:center;">
+</div>style="background-color=transparent"
+ </body>
+</html>
+
